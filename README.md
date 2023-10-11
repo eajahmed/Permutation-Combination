@@ -23,7 +23,7 @@ This Telegram bot allows users to input numbers or letters and generates all pos
 
 2. Install the required packages:
    ```bash
-   pip install -r requirements.txt
+   pip install python-telegram-bot==13.0
    ```
 4. Create a Telegram bot and obtain your bot token.
 5. Replace 'Your Bot Token' with your actual bot token in the main.py file.
