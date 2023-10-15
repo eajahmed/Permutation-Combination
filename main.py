@@ -5,11 +5,11 @@ from telegram.ext import Updater, MessageHandler, Filters, CallbackContext, Comm
 possible_combinations = []
 
 def start(update: Update, _: CallbackContext) -> None:
-    update.message.reply_text('Welcome to the Telegram Combination Bot! Please provide numbers or letters as input.')
+    update.message.reply_text('Welcome to the Telegram Permutation-Combination Bot! Please provide numbers or letters as input. make your input space separated.')
 
 def process_input(update: Update, _: CallbackContext) -> None:
     global possible_combinations
-    user_input = ''.join(update.message.text.split())  # Remove spaces from input
+    user_input = update.message.text.split()
     input_list = list(user_input)  # Convert input to a list of characters
     possible_combinations = [''.join(permutation) for permutation in itertools.permutations(input_list)]
     keyboard = [[InlineKeyboardButton("Show Combinations", callback_data='show_combinations')]]
